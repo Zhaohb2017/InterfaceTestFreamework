@@ -84,7 +84,7 @@ def runTest(testCaseFile):
         status, response = interfaceTest(num=num,api_purpose=api_purpose,api_host=api_host, request_url=request_url, request_data=request_data_new,request_method=request_method, check_point=check_point,request_data_type=request_data_type,Category=Category,correlation=correlation)
         if status != 200:
             check_point_str='无'
-            errorCase.append((num + ' ' + api_purpose, str(status), 'http://' + api_host + request_url,check_point_str+"," +'请求参数='+request_data.encode('utf-8'),response))
+            errorCase.append(( num + ' ' + api_purpose, str(status), 'http://' + api_host + request_url,check_point_str+"," +'请求参数='+request_data.encode('utf-8'),response))
 #         for key in correlationDict:
 #             if request_url.find(key) > 0:
 #                 request_url = request_url.replace(key,str(correlationDict[key]))
@@ -214,7 +214,7 @@ def cookie(Category):
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36'
                }
     if Category == "boss":
-        url='http://cpcr.boss.novaszco.com/api/user/login'
+        url='http://cpcr.novaszco.com/gateway/boss/user/login'
         data = {"username": "admin001",
                 "password": "admin001"}
         cookie_response = requests.post(url=url, headers=headers, data=data)
@@ -231,7 +231,7 @@ def cookie(Category):
 def sendMail(text):
     sender = '13823720073@163.com'
     #收件人邮箱，，可设置多个
-    receiver = ['13823720073@163.com']
+    receiver = ['13823720073@163.com',]#"wenjianhua@novaszco.com"
     # 抄送人
     mailToCc = ['13823720073@163.com']
     subject = '[AutomantionTest]接口自动化测试报告通知'  
