@@ -10,7 +10,7 @@ def mysql_command(command):
         ('112.74.176.193', 22),  # 服务器地址
         ssh_username="novards",  # 登录服务器账号
         ssh_password="Novards2017",  # 登录服务器密码
-        remote_bind_address=('rm-wz911y482te60z95ko.mysql.rds.aliyuncs.com', 3306)  # 服务器数据库地址，端口
+        remote_bind_address=('y远程阿里云服务器', 3306)  # 服务器数据库地址，端口
     )
 
     server.start()
